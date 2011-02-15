@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- This file was auto-generated from WSDL -->
+<!-- by the Apache Axis2 version: 1.5.1  Built on : Oct 19, 2009 (10:59:00 EDT) -->
+<serviceGroup>
+    <service name="DMS">
+        <messageReceivers>
+            <messageReceiver mep="http://www.w3.org/ns/wsdl/in-out" class="org.simplegrid.app.dms.DMSMessageReceiverInOut"/>
+        </messageReceivers>
+        <parameter name="ServiceClass">org.simplegrid.app.dms.DMSSkeleton</parameter>
+        <parameter name="useOriginalwsdl">true</parameter>
+        <parameter name="modifyUserWSDLPortAddress">true</parameter>
+        <operation name="submit" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://dms.app.simplegrid.org">
+            <actionMapping>urn:submit</actionMapping>
+            <outputActionMapping>urn:submitResponse</outputActionMapping>
+        </operation>
+        <operation name="getStatus" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://dms.app.simplegrid.org">
+            <actionMapping>urn:getStatus</actionMapping>
+            <outputActionMapping>urn:getStatusResponse</outputActionMapping>
+        </operation>
+        <operation name="visualize" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://dms.app.simplegrid.org">
+            <actionMapping>urn:visualize</actionMapping>
+            <outputActionMapping>urn:visualizeResponse</outputActionMapping>
+        </operation>
+        <operation name="getResult" mep="http://www.w3.org/ns/wsdl/in-out" namespace="http://dms.app.simplegrid.org">
+            <actionMapping>urn:getResult</actionMapping>
+            <outputActionMapping>urn:getResultResponse</outputActionMapping>
+        </operation>
+    </service>
+</serviceGroup>

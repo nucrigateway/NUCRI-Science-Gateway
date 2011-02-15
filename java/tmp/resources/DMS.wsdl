@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions targetNamespace="http://dms.app.simplegrid.org" xmlns:ns1="http://org.apache.axis2/xsd" xmlns:ns="http://dms.app.simplegrid.org" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/">
+  <wsdl:types>
+    <xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://dms.app.simplegrid.org">
+            <xs:element name="visualize">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="visualizeResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="submit">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="args1" type="xs:int"/>
+                        <xs:element minOccurs="0" name="args2" type="xs:int"/>
+                        <xs:element minOccurs="0" name="args3" type="xs:int"/>
+                        <xs:element minOccurs="0" name="args4" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="submitResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getStatus">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getStatusResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getResult">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="args0" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="args1" nillable="true" type="xs:string"/>
+                        <xs:element minOccurs="0" name="args2" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+            <xs:element name="getResultResponse">
+                <xs:complexType>
+                    <xs:sequence>
+                        <xs:element minOccurs="0" name="return" nillable="true" type="xs:string"/>
+                    </xs:sequence>
+                </xs:complexType>
+            </xs:element>
+        </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="getResultResponse">
+    <wsdl:part name="parameters" element="ns:getResultResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatusResponse">
+    <wsdl:part name="parameters" element="ns:getStatusResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getStatusRequest">
+    <wsdl:part name="parameters" element="ns:getStatus">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="getResultRequest">
+    <wsdl:part name="parameters" element="ns:getResult">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="visualizeRequest">
+    <wsdl:part name="parameters" element="ns:visualize">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="visualizeResponse">
+    <wsdl:part name="parameters" element="ns:visualizeResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitResponse">
+    <wsdl:part name="parameters" element="ns:submitResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="submitRequest">
+    <wsdl:part name="parameters" element="ns:submit">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="DMSPortType">
+    <wsdl:operation name="submit">
+      <wsdl:input message="ns:submitRequest" wsaw:Action="urn:submit">
+    </wsdl:input>
+      <wsdl:output message="ns:submitResponse" wsaw:Action="urn:submitResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="visualize">
+      <wsdl:input message="ns:visualizeRequest" wsaw:Action="urn:visualize">
+    </wsdl:input>
+      <wsdl:output message="ns:visualizeResponse" wsaw:Action="urn:visualizeResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <wsdl:input message="ns:getStatusRequest" wsaw:Action="urn:getStatus">
+    </wsdl:input>
+      <wsdl:output message="ns:getStatusResponse" wsaw:Action="urn:getStatusResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResult">
+      <wsdl:input message="ns:getResultRequest" wsaw:Action="urn:getResult">
+    </wsdl:input>
+      <wsdl:output message="ns:getResultResponse" wsaw:Action="urn:getResultResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="DMSHttpBinding" type="ns:DMSPortType">
+    <http:binding verb="POST"/>
+    <wsdl:operation name="submit">
+      <http:operation location="DMS/submit"/>
+      <wsdl:input>
+        <mime:content part="submit" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="submit" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="visualize">
+      <http:operation location="DMS/visualize"/>
+      <wsdl:input>
+        <mime:content part="visualize" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="visualize" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <http:operation location="DMS/getStatus"/>
+      <wsdl:input>
+        <mime:content part="getStatus" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getStatus" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResult">
+      <http:operation location="DMS/getResult"/>
+      <wsdl:input>
+        <mime:content part="getResult" type="text/xml"/>
+      </wsdl:input>
+      <wsdl:output>
+        <mime:content part="getResult" type="text/xml"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DMSSoap11Binding" type="ns:DMSPortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="submit">
+      <soap:operation soapAction="urn:submit" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="visualize">
+      <soap:operation soapAction="urn:visualize" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap:operation soapAction="urn:getStatus" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResult">
+      <soap:operation soapAction="urn:getResult" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="DMSSoap12Binding" type="ns:DMSPortType">
+    <soap12:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="submit">
+      <soap12:operation soapAction="urn:submit" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="visualize">
+      <soap12:operation soapAction="urn:visualize" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getStatus">
+      <soap12:operation soapAction="urn:getStatus" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getResult">
+      <soap12:operation soapAction="urn:getResult" style="document"/>
+      <wsdl:input>
+        <soap12:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="DMS">
+    <wsdl:port name="DMSHttpSoap11Endpoint" binding="ns:DMSSoap11Binding">
+      <soap:address location="http://localhost:8080/axis2/services/DMS"/>
+    </wsdl:port>
+    <wsdl:port name="DMSHttpSoap12Endpoint" binding="ns:DMSSoap12Binding">
+      <soap12:address location="http://localhost:8080/axis2/services/DMS"/>
+    </wsdl:port>
+    <wsdl:port name="DMSHttpEndpoint" binding="ns:DMSHttpBinding">
+      <http:address location="http://localhost:8080/axis2/services/DMS"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
